@@ -38,7 +38,7 @@ const Intro = () => {
             society.
           </span>
         </div>
-        <Link to="contact" smooth={true} spy={true}>
+        <Link to="Courses" smooth={true} spy={true}>
           <button className="button i-button">Courses</button>
         </Link>
         {/* social icons */}

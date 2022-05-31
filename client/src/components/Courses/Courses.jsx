@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./Services.css";
+import "./Courses.css";
 import Card from "../Card/Card";
 import HeartEmoji from "../../img/heartemoji.png";
 import Glasses from "../../img/glasses.png";
@@ -8,7 +8,7 @@ import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 import Resume from "./resume.pdf";
 
-const Services = () => {
+const Courses = () => {
   // context
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
@@ -20,7 +20,7 @@ const Services = () => {
   };
 
   return (
-    <div className="services" id="services">
+    <div className="services" id="Courses">
       {/* left side */}
       <div className="awesome">
         {/* dark mode */}
@@ -86,4 +86,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Courses;

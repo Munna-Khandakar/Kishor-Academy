@@ -1,9 +1,9 @@
 import Navbar from "./components/Navbar/Navbar";
 import Intro from "./components/Intro/Intro";
-import Services from "./components/Services/Services";
+import Courses from "./components/Courses/Courses";
 import "./App.css";
 import Experience from "./components/Experience/Experience";
-import Works from "./components/Works/Works";
+import Workshop from "./components/Workshop/Workshop";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Testimonial from "./components/Testimonials/Testimonial";
 import Contact from "./components/Contact/Contact";
@@ -23,9 +23,9 @@ function App() {
     >
       <Navbar />
       <Intro />
-      <Services />
+      <Courses />
       <Experience />
-      <Works />
+      <Workshop />
       <Portfolio />
       <Testimonial />
       <Contact />

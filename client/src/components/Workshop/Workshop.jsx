@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./Works.css";
+import "./Workshop.css";
 import report from "../../images/report.png";
 import block from "../../images/block.png";
 import code from "../../images/code.png";
@@ -21,7 +21,7 @@ const Works = () => {
 
   // transition
   return (
-    <div className="works" id="works">
+    <div className="works" id="Workshop">
       {/* left side */}
       <div className="w-left">
         <div className="awesome">
@@ -40,7 +40,7 @@ const Works = () => {
             We are advancing with future trends. We are expecting your support.
           </spane>
           <Link to="contact" smooth={true} spy={true}>
-            <button className="button s-button">Hire Me</button>
+            <button className="button s-button">Join Workshop</button>
           </Link>
           <div
             className="blur s-blur1"
