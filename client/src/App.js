@@ -1,19 +1,21 @@
-import Navbar from "./components/Navbar/Navbar";
-import Intro from "./components/Intro/Intro";
-import Courses from "./components/Courses/Courses";
+// import Navbar from "./components/Navbar/Navbar";
+// import Intro from "./components/Intro/Intro";
+// import Courses from "./components/Courses/Courses";
+// import Experience from "./components/Experience/Experience";
+// import Workshop from "./components/Workshop/Workshop";
+// import Portfolio from "./components/Portfolio/Portfolio";
+// import Testimonial from "./components/Testimonials/Testimonial";
+// import Contact from "./components/Contact/Contact";
+// import Footer from "./components/Footer/Footer";
+// import { useContext } from "react";
+// import { themeContext } from "./Context";
 import "./App.css";
-import Experience from "./components/Experience/Experience";
-import Workshop from "./components/Workshop/Workshop";
-import Portfolio from "./components/Portfolio/Portfolio";
-import Testimonial from "./components/Testimonials/Testimonial";
-import Contact from "./components/Contact/Contact";
-import Footer from "./components/Footer/Footer";
-import { useContext } from "react";
-import { themeContext } from "./Context";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import Courses from "./pages/Courses";
 function App() {
-  const theme = useContext(themeContext);
-  const darkMode = theme.state.darkMode;
+  // const theme = useContext(themeContext);
+  // const darkMode = theme.state.darkMode;
   return (
     // <div
     //   className="App"
@@ -32,7 +34,13 @@ function App() {
     //   <Contact />
     //   <Footer />
     // </div>
-    <Home />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/courses" element={<Courses />} />
+      </Routes>
+    </BrowserRouter>
+    // <Home />
   );
 }
 
