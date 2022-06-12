@@ -13,6 +13,8 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
+import Course from "./pages/Course";
+
 function App() {
   // const theme = useContext(themeContext);
   // const darkMode = theme.state.darkMode;
@@ -37,7 +39,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/course" element={<Course />} />
         <Route path="/courses" element={<Courses />} />
+        {/* <Route path="/form" element={<HorizontalStepperWithError />} /> */}
       </Routes>
     </BrowserRouter>
     // <Home />

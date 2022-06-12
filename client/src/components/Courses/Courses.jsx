@@ -6,13 +6,15 @@ import Glasses from "../../img/glasses.png";
 import Humble from "../../img/humble.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
-import Resume from "./resume.pdf";
+//import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const Courses = () => {
   // context
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
-
+  //routing
+  const navigate = useNavigate();
   // transition
   const transition = {
     duration: 1,
@@ -31,8 +33,13 @@ const Courses = () => {
           <br />
           Taking an online course can help develop skills and knowledge
         </spane>
-        <a href={Resume} download>
-          <button className="button s-button">More Courses</button>
+        <a>
+          <button
+            className="button s-button"
+            onClick={() => navigate("/courses")}
+          >
+            More Courses
+          </button>
         </a>
         <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
       </div>
