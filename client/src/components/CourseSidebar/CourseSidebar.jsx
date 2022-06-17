@@ -14,9 +14,6 @@ function CourseSidebar() {
       sx={{
         width: "100%",
         maxWidth: 360,
-        bgcolor: "background.paper",
-        position: "relative",
-        overflow: "auto",
         maxHeight: 1000,
         "& ul": { padding: 0 },
       }}
@@ -24,17 +21,11 @@ function CourseSidebar() {
       <List>
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>
-              <MenuBookIcon />
-            </ListItemIcon>
             <ListItemText primary="Topic 1" />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemIcon>
-              <MenuBookIcon />
-            </ListItemIcon>
             <ListItemText primary="Topic 2" />
           </ListItemButton>
         </ListItem>

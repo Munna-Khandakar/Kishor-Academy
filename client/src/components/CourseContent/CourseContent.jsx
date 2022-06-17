@@ -1,15 +1,24 @@
-import { Box } from "@mui/material";
-import React from "react";
+import { Box, Paper, Typography } from "@mui/material";
 
 function CourseContent() {
   return (
     <Box
-      bgcolor={"red"}
-      flex={7}
-      p={2}
-      sx={{ display: { xs: "none", sm: "block" } }}
+      flex={8}
+      sx={{
+        display: "flex",
+        textAlign: "center",
+        "& > :not(style)": {
+          m: 1,
+          width: "100%",
+          height: "100%",
+        },
+      }}
     >
-      CourseContent
+      <Paper elevation={5}>
+        <Typography variant="h2" component="h1">
+          JavaScript Tutorial
+        </Typography>
+      </Paper>
     </Box>
   );
 }

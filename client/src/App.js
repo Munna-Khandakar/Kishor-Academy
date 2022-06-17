@@ -14,6 +14,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import Course from "./pages/Course";
+import TextEditor from "./Editor";
 
 function App() {
   // const theme = useContext(themeContext);
@@ -36,14 +37,15 @@ function App() {
     //   <Contact />
     //   <Footer />
     // </div>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/course" element={<Course />} />
-        <Route path="/courses" element={<Courses />} />
-        {/* <Route path="/form" element={<HorizontalStepperWithError />} /> */}
-      </Routes>
-    </BrowserRouter>
+    <TextEditor />
+    // <BrowserRouter>
+    //   <Routes>
+    //     <Route path="/" element={<Home />} />
+    //     <Route path="/course" element={<Course />} />
+    //     <Route path="/courses" element={<Courses />} />
+    //     {/* <Route path="/form" element={<HorizontalStepperWithError />} /> */}
+    //   </Routes>
+    // </BrowserRouter>
     // <Home />
   );
 }
