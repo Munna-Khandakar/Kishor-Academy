@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import Course from "./pages/Course";
 import TextEditor from "./Editor";
+import CreatePost from "./admin/CreatePost";
 
 function App() {
   // const theme = useContext(themeContext);
@@ -37,15 +38,16 @@ function App() {
     //   <Contact />
     //   <Footer />
     // </div>
-    <TextEditor />
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path="/" element={<Home />} />
-    //     <Route path="/course" element={<Course />} />
-    //     <Route path="/courses" element={<Courses />} />
-    //     {/* <Route path="/form" element={<HorizontalStepperWithError />} /> */}
-    //   </Routes>
-    // </BrowserRouter>
+    // <TextEditor />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/course" element={<Course />} />
+        <Route path="/courses" element={<Courses />} />
+        <Route path="/admin/create" element={<CreatePost />} />
+        {/* <Route path="/form" element={<HorizontalStepperWithError />} /> */}
+      </Routes>
+    </BrowserRouter>
     // <Home />
   );
 }

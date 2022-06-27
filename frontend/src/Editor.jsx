@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { convertToRaw, EditorState } from "draft-js";
 import { Editor } from "react-draft-wysiwyg";
-import "../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
+import "react-draft-wysiwyg/dist/react-draft-wysiwyg.css";
 import draftToHtml from "draftjs-to-html";
 import { Grid, Button } from "@mui/material";
 
@@ -10,7 +10,7 @@ export default class TextEditor extends Component {
     super(props);
     this.state = {
       editorState: EditorState.createEmpty(),
-      message: "Try the editor below!",
+      message: "Your Text Will Preview Here...",
       rawMessage: "",
     };
 
@@ -30,16 +30,21 @@ export default class TextEditor extends Component {
     this.setState({
       message: this.state.rawMessage,
     });
+    console.log(this.state.rawMessage);
+  }
+  saveToDB() {
+    alert("saved...");
   }
 
   render() {
     const { editorState } = this.state;
     const wrapperStyle = {
       border: "1px solid #969696",
+      // background: "green",
     };
     const editorStyle = {
-      //   height: "10rem",
-      //   padding: "1rem",
+      height: "auto",
+      padding: "1rem",
     };
     const toolbarStyle = {};
     return (
@@ -55,9 +60,17 @@ export default class TextEditor extends Component {
             onEditorStateChange={this.onEditorStateChange}
           />
         </div>
-        <div style={{ marginTop: "2%" }}>
+        <div
+          style={{
+            marginTop: "2%",
+            marginBottom: "2%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
           <Button variant="outlined" onClick={this.handleEditorStateToMessage}>
-            submit
+            Preview
           </Button>
         </div>
         <Grid
@@ -66,12 +79,26 @@ export default class TextEditor extends Component {
           style={{
             border: "1px solid #969696",
             borderRadius: "3px",
-            height: "10rem",
+            height: "auto",
             padding: "1rem",
+            // background: "red",
           }}
         >
           <div dangerouslySetInnerHTML={{ __html: this.state.message }}></div>
         </Grid>
+        <div
+          style={{
+            marginTop: "2%",
+            marginBottom: "2%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Button variant="outlined" onClick={this.saveToDB}>
+            Submit
+          </Button>
+        </div>
       </React.Fragment>
     );
   }
