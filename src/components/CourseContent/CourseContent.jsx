@@ -1,6 +1,7 @@
 import { Box, Paper, Typography } from "@mui/material";
 
 function CourseContent({ content }) {
+  console.log(content);
   return (
     <Box
       flex={8}
@@ -14,7 +15,7 @@ function CourseContent({ content }) {
         },
       }}
     >
-      <Paper elevation={5}>{content}</Paper>
+      <Paper elevation={5} dangerouslySetInnerHTML={{ __html: content }} />
     </Box>
   );
 }

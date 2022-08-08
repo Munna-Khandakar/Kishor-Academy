@@ -25,11 +25,9 @@ function Course() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:2368/ghost/api/content/posts/?key=${process.env.REACT_APP_GHOST_CONTENT_API_KEY}&filter=tag:${tag_slug}`
+        `${process.env.REACT_APP_GHOST_APP_URL}/ghost/api/content/posts/?key=${process.env.REACT_APP_GHOST_CONTENT_API_KEY}&filter=tag:${tag_slug}`
       )
       .then((res) => {
-        console.log(tag_slug);
-        console.log(res.data.posts[0].html);
         setCourses(res.data.posts);
         setContent(res.data.posts[0].html);
       })
@@ -61,9 +59,7 @@ function Course() {
             {courses &&
               courses.map((topic, index) => (
                 <ListItem key={index}>
-                  <ListItemButton
-                    onClick={() => setContent(courses[index].html)}
-                  >
+                  <ListItemButton onClick={() => setContent(topic.html)}>
                     <ListItemText secondary={topic.title} />
                   </ListItemButton>
                 </ListItem>
