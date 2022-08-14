@@ -27,7 +27,7 @@ const Courses = () => {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:2368/ghost/api/content/tags/?key=${process.env.REACT_APP_GHOST_CONTENT_API_KEY}&limit=3`
+        `${process.env.REACT_APP_GHOST_APP_URL}/ghost/api/content/tags/?key=${process.env.REACT_APP_GHOST_CONTENT_API_KEY}&limit=3`
       )
       .then((res) => {
         //  console.log(res.data.tags);
@@ -64,45 +64,33 @@ const Courses = () => {
       {courses && (
         <div className="cards">
           {/* first card */}
-          <motion.div
-            initial={{ left: "25rem" }}
-            whileInView={{ left: "14rem" }}
-            transition={transition}
-          >
-            <Card
-              emoji={courses[0].feature_image}
-              heading={courses[0].name}
-              detail={courses[0].description}
-              tag_slug={courses[0].slug}
-            />
-          </motion.div>
+
+          <Card
+            emoji={courses[0].feature_image}
+            heading={courses[0].name}
+            detail={courses[0].description}
+            tag_slug={courses[0].slug}
+          />
+
           {/* second card */}
-          <motion.div
-            initial={{ left: "-11rem", top: "12rem" }}
-            whileInView={{ left: "-4rem" }}
-            transition={transition}
-          >
-            <Card
-              emoji={courses[1].feature_image}
-              heading={courses[1].name}
-              detail={courses[1].description}
-              tag_slug={courses[1].slug}
-            />
-          </motion.div>
+
+          <Card
+            emoji={courses[1].feature_image}
+            heading={courses[1].name}
+            detail={courses[1].description}
+            tag_slug={courses[1].slug}
+          />
+
           {/* 3rd */}
-          <motion.div
-            initial={{ top: "19rem", left: "25rem" }}
-            whileInView={{ left: "12rem" }}
-            transition={transition}
-          >
-            <Card
-              emoji={courses[2].feature_image}
-              heading={courses[2].name}
-              detail={courses[2].description}
-              tag_slug={courses[2].slug}
-              color="rgba(252, 166, 31, 0.45)"
-            />
-          </motion.div>
+
+          <Card
+            emoji={courses[2].feature_image}
+            heading={courses[2].name}
+            detail={courses[2].description}
+            tag_slug={courses[2].slug}
+            color="rgba(252, 166, 31, 0.45)"
+          />
+
           <div
             className="blur s-blur2"
             style={{ background: "var(--purple)" }}

@@ -15,8 +15,6 @@ import { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
 import Course from "./pages/Course";
-import TextEditor from "./Editor";
-import CreatePost from "./admin/CreatePost";
 
 function App() {
   useEffect(() => {
@@ -32,7 +30,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/course/:tag_slug" element={<Course />} />
         <Route path="/courses" element={<Courses />} />
-        <Route path="/admin/create" element={<CreatePost />} />
         {/* <Route path="/form" element={<HorizontalStepperWithError />} /> */}
       </Routes>
     </BrowserRouter>

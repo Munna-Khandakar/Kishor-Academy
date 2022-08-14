@@ -15,7 +15,7 @@ function CourseSidebar() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:2368/ghost/api/content/posts/?key=${process.env.REACT_APP_GHOST_CONTENT_API_KEY}&filter=tag:${tag_slug}`
+        `${process.env.REACT_APP_GHOST_APP_URL}/ghost/api/content/posts/?key=${process.env.REACT_APP_GHOST_CONTENT_API_KEY}&filter=tag:${tag_slug}`
       )
       .then((res) => {
         console.log(tag_slug);

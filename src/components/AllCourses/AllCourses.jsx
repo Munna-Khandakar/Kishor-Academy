@@ -12,7 +12,7 @@ function AllCourses() {
   useEffect(() => {
     axios
       .get(
-        `http://localhost:2368/ghost/api/content/tags/?key=${process.env.REACT_APP_GHOST_CONTENT_API_KEY}`
+        `${process.env.REACT_APP_GHOST_APP_URL}/ghost/api/content/tags/?key=${process.env.REACT_APP_GHOST_CONTENT_API_KEY}`
       )
       .then((res) => {
         // console.log(res.data.tags);

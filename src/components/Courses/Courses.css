@@ -37,11 +37,18 @@
   margin-top: 1rem;
 }
 /* right sided */
-.cards {
+/* .cards {
   position: relative;
 }
 .cards > * {
   position: absolute;
+} */
+.cards {
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 /* blur */
@@ -66,10 +73,9 @@
 
   .cards {
     display: flex;
+    gap: 1rem;
     flex-direction: column;
-    gap: 17rem;
-  }
-  .cards > * {
-    position: static;
+    align-items: center;
+    justify-content: center;
   }
 }
