@@ -8,7 +8,9 @@ const Card2 = ({ emoji, name, description, color, tag_slug }) => {
     <div className="card2" style={{ borderColor: { color } }}>
       <img src={emoji} alt={tag_slug} />
       <span>{name}</span>
-      <span className="card-text-warp">{description}</span>
+      <span className="card-text-warp">
+        {description.substring(0, 50) + "..."}
+      </span>
       <button
         className="c-button"
         onClick={() => navigate(`/course/${tag_slug}`)}

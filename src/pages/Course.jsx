@@ -1,7 +1,6 @@
 import AllCourses from "../components/AllCourses/AllCourses";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
-import { useContext } from "react";
 import { themeContext } from "../Context";
 import "../App.css";
 import CourseSidebar from "../components/CourseSidebar/CourseSidebar";
@@ -12,9 +11,15 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
 
 function Course() {
   const theme = useContext(themeContext);
@@ -35,43 +40,108 @@ function Course() {
         console.log(error);
       });
   }, []);
-  return (
-    <div
-      className="App"
-      style={{
-        background: darkMode ? "black" : "",
-        color: darkMode ? "white" : "",
-      }}
-    >
-      <Navbar />
-      <Stack direction="row" justifyContent="space-between">
-        {/* sidebar */}
-        <Box
-          flex={2}
-          sx={{
-            width: "100%",
-            maxWidth: 360,
-            maxHeight: 1000,
-            "& ul": { padding: 0 },
-          }}
-        >
-          <List>
-            {courses &&
-              courses.map((topic, index) => (
-                <ListItem key={index}>
-                  <ListItemButton onClick={() => setContent(topic.html)}>
-                    <ListItemText secondary={topic.title} />
-                  </ListItemButton>
-                </ListItem>
-              ))}
-          </List>
-        </Box>
-        {/* couse content  */}
-        {content && <CourseContent content={content} />}
-      </Stack>
 
-      {/* <Footer /> */}
-    </div>
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = (context) => {
+    setContent(context);
+    setAnchorEl(null);
+  };
+
+  return (
+    <>
+      <div className="App">
+        <Navbar />
+      </div>
+
+      <div
+        style={{
+          background: darkMode ? "black" : "",
+          color: darkMode ? "white" : "",
+        }}
+      >
+        <Stack
+          direction={{ xs: "column", sm: "row" }}
+          justifyContent="space-between"
+        >
+          {/* sidebar */}
+          <Box
+            flex={2}
+            sx={{
+              display: { xs: "none", sm: "block" },
+              width: "100%",
+              maxWidth: 360,
+              maxHeight: 1000,
+              "& ul": { padding: 0 },
+            }}
+          >
+            <List>
+              {courses &&
+                courses.map((topic, index) => (
+                  <ListItem key={index}>
+                    <ListItemButton onClick={() => setContent(topic.html)}>
+                      <ListItemText secondary={topic.title} />
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+            </List>
+          </Box>
+          <Box
+            sx={{
+              display: { xs: "block", sm: "none" },
+            }}
+          >
+            <IconButton
+              id="demo-positioned-button"
+              aria-controls={open ? "demo-positioned-menu" : undefined}
+              aria-haspopup="true"
+              aria-expanded={open ? "true" : undefined}
+              onClick={handleClick}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="demo-positioned-menu"
+              aria-labelledby="demo-positioned-button"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "left",
+              }}
+            >
+              {courses &&
+                courses.map((topic, index) => (
+                  // <ListItem key={index}>
+                  //   <ListItemButton onClick={() => setContent(topic.html)}>
+                  //     <ListItemText secondary={topic.title} />
+                  //   </ListItemButton>
+                  // </ListItem>
+                  <MenuItem onClick={() => handleClose(topic.html)}>
+                    {topic.title}
+                  </MenuItem>
+                ))}
+              {/* <MenuItem onClick={handleClose}>Profile</MenuItem>
+            <MenuItem onClick={handleClose}>My account</MenuItem>
+            <MenuItem onClick={handleClose}>Logout</MenuItem> */}
+            </Menu>
+            <br />
+          </Box>
+          {/* couse content  */}
+          {content && <CourseContent content={content} />}
+        </Stack>
+
+        {/* <Footer /> */}
+      </div>
+    </>
   );
 }
 

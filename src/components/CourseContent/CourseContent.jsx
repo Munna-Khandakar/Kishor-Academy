@@ -1,22 +1,17 @@
-import { Box, Paper, Typography } from "@mui/material";
+import { Box, Card, Paper, Stack, Typography } from "@mui/material";
 
 function CourseContent({ content }) {
   console.log(content);
   return (
-    <Box
-      flex={8}
+    <Card
       sx={{
-        display: "flex",
+        width: "100%",
         textAlign: "center",
-        "& > :not(style)": {
-          m: 1,
-          width: "100%",
-          height: "100%",
-        },
+        paddingLeft: "1rem",
+        paddingRight: "1rem",
       }}
-    >
-      <Paper elevation={5} dangerouslySetInnerHTML={{ __html: content }} />
-    </Box>
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
   );
 }
 
