@@ -36,7 +36,21 @@
   transform: scale(1.1);
   cursor: pointer;
 }
-
+.card-skeleton {
+  width: 10rem;
+  height: 13rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.26);
+  border: 7px solid var(--orangeCard);
+  box-shadow: var(--boxShadow);
+  border-radius: 20px;
+  padding: 10px 16px 2rem 16px;
+}
 /* cards */
 
 @media screen and (max-width: 480px) {

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Card2 from "../Card2/Card2";
 import HeartEmoji from "../../img/heartemoji.png";
+import CardSkeleton from "../CardSkeleton/CardSkeleton";
 
 function AllCourses() {
   const [courses, setCourses] = useState(null);
@@ -24,7 +25,7 @@ function AllCourses() {
   }, []);
   return (
     <div className="all-courses">
-      {courses &&
+      {courses ? (
         courses.map((course, index) => (
           <Card2
             key={index}
@@ -33,7 +34,23 @@ function AllCourses() {
             description={course.description}
             tag_slug={course.slug}
           />
-        ))}
+        ))
+      ) : (
+        <>
+          <CardSkeleton /> <CardSkeleton /> <CardSkeleton />
+        </>
+      )}
+      {/* {courses &&
+        courses.map((course, index) => (
+          // <Card2
+          //   key={index}
+          //   emoji={course.feature_image}
+          //   name={course.name}
+          //   description={course.description}
+          //   tag_slug={course.slug}
+          // />
+          <CardSkeleton />
+        ))} */}
     </div>
   );
 }

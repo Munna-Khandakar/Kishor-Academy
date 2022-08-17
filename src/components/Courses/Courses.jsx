@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 //import { useHistory } from "react-router";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import CardSkeleton from "../CardSkeleton/CardSkeleton";
 const Courses = () => {
   // context
   const [courses, setCourses] = useState(null);
@@ -61,7 +62,7 @@ const Courses = () => {
         <div className="blur s-blur1" style={{ background: "#ABF1FF94" }}></div>
       </div>
       {/* right */}
-      {courses && (
+      {courses ? (
         <div className="cards">
           {/* first card */}
           <motion.div
@@ -102,6 +103,37 @@ const Courses = () => {
               tag_slug={courses[2].slug}
               color="rgba(252, 166, 31, 0.45)"
             />
+          </motion.div>
+          <div
+            className="blur s-blur2"
+            style={{ background: "var(--purple)" }}
+          ></div>
+        </div>
+      ) : (
+        <div className="cards">
+          {/* first card */}
+          <motion.div
+            initial={{ left: "25rem" }}
+            whileInView={{ left: "14rem" }}
+            transition={transition}
+          >
+            <CardSkeleton />
+          </motion.div>
+          {/* second card */}
+          <motion.div
+            initial={{ left: "-11rem", top: "12rem" }}
+            whileInView={{ left: "-4rem" }}
+            transition={transition}
+          >
+            <CardSkeleton />
+          </motion.div>
+          {/* 3rd */}
+          <motion.div
+            initial={{ top: "19rem", left: "25rem" }}
+            whileInView={{ left: "12rem" }}
+            transition={transition}
+          >
+            <CardSkeleton />
           </motion.div>
           <div
             className="blur s-blur2"
