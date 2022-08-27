@@ -27,9 +27,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/course/:tag_slug" element={<Course />} />
-        <Route path="/courses" element={<Courses />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/course/:tag_slug" element={<Course />} />
+        <Route exact path="/courses" element={<Courses />} />
         {/* <Route path="/form" element={<HorizontalStepperWithError />} /> */}
       </Routes>
     </BrowserRouter>
