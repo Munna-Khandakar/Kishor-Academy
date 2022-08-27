@@ -57,4 +57,7 @@
   .card2 {
     width: 100%;
   }
+  .card-skeleton {
+    width: 100%;
+  }
 }

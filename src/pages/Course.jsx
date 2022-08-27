@@ -63,83 +63,71 @@ function Course() {
           color: darkMode ? "white" : "",
         }}
       >
-        <Stack
-          direction={{ xs: "column", sm: "row" }}
-          justifyContent="space-between"
-        >
-          {/* sidebar */}
-          <Box
-            flex={2}
-            sx={{
-              display: { xs: "none", sm: "block" },
-              width: "100%",
-              maxWidth: 360,
-              maxHeight: 1000,
-              "& ul": { padding: 0 },
-            }}
-          >
-            <List>
-              {courses &&
-                courses.map((topic, index) => (
-                  <ListItem key={index}>
-                    <ListItemButton onClick={() => setContent(topic.html)}>
-                      <ListItemText secondary={topic.title} />
-                    </ListItemButton>
-                  </ListItem>
-                ))}
-            </List>
-          </Box>
-          <Box
-            sx={{
-              display: { xs: "block", sm: "none" },
-            }}
-          >
-            <IconButton
-              id="demo-positioned-button"
-              aria-controls={open ? "demo-positioned-menu" : undefined}
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              onClick={handleClick}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="demo-positioned-menu"
-              aria-labelledby="demo-positioned-button"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
+        <Stack direction={{ xs: "column", sm: "row" }}>
+          <Box>
+            {/* sidebar */}
+            <Box
+              flex={4}
+              sx={{
+                display: { xs: "none", sm: "block" },
+                "& ul": { padding: 0 },
               }}
             >
-              {courses &&
-                courses.map((topic, index) => (
-                  // <ListItem key={index}>
-                  //   <ListItemButton onClick={() => setContent(topic.html)}>
-                  //     <ListItemText secondary={topic.title} />
-                  //   </ListItemButton>
-                  // </ListItem>
-                  <MenuItem onClick={() => handleClose(topic.html)}>
-                    {topic.title}
-                  </MenuItem>
-                ))}
-              {/* <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem> */}
-            </Menu>
-            <br />
+              <List>
+                {courses &&
+                  courses.map((topic, index) => (
+                    <ListItem key={index}>
+                      <ListItemButton onClick={() => setContent(topic.html)}>
+                        <ListItemText secondary={topic.title} />
+                      </ListItemButton>
+                    </ListItem>
+                  ))}
+              </List>
+            </Box>
+            <Box
+              sx={{
+                display: { xs: "block", sm: "none" },
+              }}
+            >
+              <IconButton
+                id="demo-positioned-button"
+                aria-controls={open ? "demo-positioned-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? "true" : undefined}
+                onClick={handleClick}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Menu
+                id="demo-positioned-menu"
+                aria-labelledby="demo-positioned-button"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "left",
+                }}
+              >
+                {courses &&
+                  courses.map((topic, index) => (
+                    <MenuItem onClick={() => handleClose(topic.html)}>
+                      {topic.title}
+                    </MenuItem>
+                  ))}
+              </Menu>
+              <br />
+            </Box>
           </Box>
-          {/* couse content  */}
-          {content && <CourseContent content={content} />}
+          <Box flex={8}>
+            {/* couse content  */}
+            {content && <CourseContent content={content} />}
+          </Box>
         </Stack>
-
-        {/* <Footer /> */}
       </div>
     </>
   );

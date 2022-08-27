@@ -1,15 +1,11 @@
 import { Box, Card, Paper, Stack, Typography } from "@mui/material";
-
+import "./CourseContent.css";
 function CourseContent({ content }) {
   console.log(content);
+
   return (
-    <Card
-      sx={{
-        width: "100%",
-        textAlign: "center",
-        paddingLeft: "1rem",
-        paddingRight: "1rem",
-      }}
+    <div
+      className="course-content-wrapper"
       dangerouslySetInnerHTML={{ __html: content }}
     />
   );

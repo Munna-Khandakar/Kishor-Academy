@@ -3,9 +3,6 @@ import "./Courses.css";
 import Card from "../Card/Card";
 
 import { useState, useEffect } from "react";
-import HeartEmoji from "../../img/heartemoji.png";
-import Glasses from "../../img/glasses.png";
-import Humble from "../../img/humble.png";
 import { themeContext } from "../../Context";
 import { motion } from "framer-motion";
 //import { useHistory } from "react-router";

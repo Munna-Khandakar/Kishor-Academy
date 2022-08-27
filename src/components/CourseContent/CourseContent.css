@@ -1,4 +1,32 @@
-.content-main {
-  background-color: aqua;
+.course-content-wrapper {
+  text-align: start;
   padding: 1rem;
+  color: #2c3e50;
+}
+P {
+  font-size: 1rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h1 {
+  size: 3rem;
+}
+code {
+  word-wrap: break-word;
+  font-style: oblique;
+  background-color: #fcf3cf;
+  border-radius: 5px;
+}
+blockquote {
+  border-left: 4px dotted var(--orangeCard);
+  padding-left: 1rem;
+}
+pre {
+  width: max-content;
+  word-wrap: break-word;
+  border-radius: 5px;
+  padding: 1rem;
+  text-align: center;
+  background-color: #fcf3cf;
 }
