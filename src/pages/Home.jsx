@@ -25,10 +25,10 @@ function Home() {
       <Navbar />
       <Intro />
       <Courses />
-      <Experience />
+      {/* <Experience /> */}
       <Workshop />
-      <Portfolio />
-      <Testimonial />
+      {/* <Portfolio />
+      <Testimonial /> */}
       <Contact />
       <Footer />
     </div>

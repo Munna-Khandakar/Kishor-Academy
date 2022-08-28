@@ -8,7 +8,7 @@ import glassesimoji from "../../img/glassesimoji.png";
 import thumbup from "../../img/thumbup.png";
 import crown from "../../img/crown.png";
 import FloatinDiv from "../FloatingDiv/FloatingDiv";
-import Github from "../../img/github.png";
+import Facebook from "../../img/Facebook.png";
 import LinkedIn from "../../img/linkedin.png";
 import Instagram from "../../img/instagram.png";
 import { themeContext } from "../../Context";
@@ -43,8 +43,23 @@ const Intro = () => {
         </Link>
         {/* social icons */}
         <div className="i-icons">
-          <img src={Github} alt="" />
-          <img src={LinkedIn} alt="" />
+          <img
+            src={Facebook}
+            alt="Kishor Academy Facebook"
+            onClick={() =>
+              window.open("https://www.facebook.com/academykishor", "_blank")
+            }
+          />
+          <img
+            src={LinkedIn}
+            alt="Kishor Academy LinkedIn"
+            onClick={() =>
+              window.open(
+                "https://www.linkedin.com/company/kishor-academy/",
+                "_blank"
+              )
+            }
+          />
           <img src={Instagram} alt="" />
         </div>
       </div>
