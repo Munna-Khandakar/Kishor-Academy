@@ -16,7 +16,7 @@ function AllCourses() {
         `${process.env.REACT_APP_GHOST_APP_URL}/ghost/api/content/tags/?key=${process.env.REACT_APP_GHOST_CONTENT_API_KEY}`
       )
       .then((res) => {
-        // console.log(res.data.tags);
+        console.log(res.data.tags);
         setCourses(res.data.tags);
       })
       .catch(function (error) {
@@ -40,17 +40,6 @@ function AllCourses() {
           <CardSkeleton /> <CardSkeleton /> <CardSkeleton />
         </>
       )}
-      {/* {courses &&
-        courses.map((course, index) => (
-          // <Card2
-          //   key={index}
-          //   emoji={course.feature_image}
-          //   name={course.name}
-          //   description={course.description}
-          //   tag_slug={course.slug}
-          // />
-          <CardSkeleton />
-        ))} */}
     </div>
   );
 }

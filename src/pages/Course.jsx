@@ -33,7 +33,7 @@ function Course() {
         `${process.env.REACT_APP_GHOST_APP_URL}/ghost/api/content/posts/?key=${process.env.REACT_APP_GHOST_CONTENT_API_KEY}&filter=tag:${tag_slug}`
       )
       .then((res) => {
-        setCourses(res.data.posts);
+        setCourses(res.data.posts.reverse());
         setContent(res.data.posts[0].html);
       })
       .catch(function (error) {
