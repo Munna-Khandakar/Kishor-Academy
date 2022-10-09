@@ -1,9 +1,6 @@
-import AllCourses from "../components/AllCourses/AllCourses";
 import Navbar from "../components/Navbar/Navbar";
-import Footer from "../components/Footer/Footer";
 import { themeContext } from "../Context";
 import "../App.css";
-import CourseSidebar from "../components/CourseSidebar/CourseSidebar";
 import CourseContent from "../components/CourseContent/CourseContent";
 import Stack from "@mui/material/Stack";
 import { Box } from "@mui/material";
@@ -14,18 +11,19 @@ import ListItemText from "@mui/material/ListItemText";
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
-import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import ProgressLine from "../components/ProgressLine/ProgressLine";
 
 function Course() {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
   const [courses, setCourses] = useState(null);
   const [content, setContent] = useState("");
+  const [completedPart, setCompletedPart] = useState(1);
+  const [totalCourseSize, setTotalCourseSize] = useState(1);
   let { tag_slug } = useParams();
   useEffect(() => {
     axios
@@ -33,6 +31,7 @@ function Course() {
         `${process.env.REACT_APP_GHOST_APP_URL}/ghost/api/content/posts/?key=${process.env.REACT_APP_GHOST_CONTENT_API_KEY}&filter=tag:${tag_slug}`
       )
       .then((res) => {
+        setTotalCourseSize(res.data.posts.length);
         setCourses(res.data.posts.reverse());
         setContent(res.data.posts[0].html);
       })
@@ -50,11 +49,21 @@ function Course() {
     setContent(context);
     setAnchorEl(null);
   };
-
   return (
     <>
       <div className="App">
         <Navbar />
+        <ProgressLine
+          // label="Two visual percentages"
+          backgroundColor="lightgrey"
+          visualParts={[
+            {
+              // percentage: "53%",
+              percentage: `${(completedPart / totalCourseSize) * 100}%`,
+              color: "#FCA61F",
+            },
+          ]}
+        />
       </div>
 
       <div
@@ -77,7 +86,12 @@ function Course() {
                 {courses &&
                   courses.map((topic, index) => (
                     <ListItem key={index}>
-                      <ListItemButton onClick={() => setContent(topic.html)}>
+                      <ListItemButton
+                        onClick={() => {
+                          setContent(topic.html);
+                          setCompletedPart(index + 1);
+                        }}
+                      >
                         <ListItemText secondary={topic.title} />
                       </ListItemButton>
                     </ListItem>
@@ -115,7 +129,13 @@ function Course() {
               >
                 {courses &&
                   courses.map((topic, index) => (
-                    <MenuItem onClick={() => handleClose(topic.html)}>
+                    <MenuItem
+                      key={index}
+                      onClick={() => {
+                        handleClose(topic.html);
+                        setCompletedPart(index + 1);
+                      }}
+                    >
                       {topic.title}
                     </MenuItem>
                   ))}
@@ -124,7 +144,7 @@ function Course() {
             </Box>
           </Box>
           <Box flex={8}>
-            {/* couse content  */}
+            {/* course content  */}
             {content && <CourseContent content={content} />}
           </Box>
         </Stack>

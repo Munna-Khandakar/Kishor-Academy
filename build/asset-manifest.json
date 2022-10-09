@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b84cd992.css",
-    "main.js": "/static/js/main.96274e81.js",
+    "main.css": "/static/css/main.8e4a4f19.css",
+    "main.js": "/static/js/main.86d11d92.js",
     "static/media/ecommerce.png": "/static/media/ecommerce.522da76635d52117102b.png",
     "static/media/sidebar.png": "/static/media/sidebar.b2225070b8adae68d063.png",
     "static/media/musicapp.png": "/static/media/musicapp.f1c301f91904ef5f9249.png",
@@ -11,16 +11,18 @@
     "static/media/hoc.png": "/static/media/hoc.e6af51fc04c57ae67096.png",
     "static/media/thumbup.png": "/static/media/thumbup.e06790ba656f0397cbe5.png",
     "static/media/heartemoji.png": "/static/media/heartemoji.26b1b6ed5e0e44083b28.png",
+    "static/media/level3.png": "/static/media/level3.60c4ee3ed5603a2c263f.png",
+    "static/media/level2.png": "/static/media/level2.e8aab851cba1292dd756.png",
     "static/media/wave.png": "/static/media/wave.fdfef4069ad90f610990.png",
     "static/media/crown.png": "/static/media/crown.dbe416beae9b49b842ab.png",
     "static/media/Vector2.png": "/static/media/Vector2.28db5bfd58081dd1df1b.png",
     "static/media/website-maintenance.svg": "/static/media/website-maintenance.d8be1de3b22fe6b126df63c949684e0d.svg",
     "index.html": "/index.html",
-    "main.b84cd992.css.map": "/static/css/main.b84cd992.css.map",
-    "main.96274e81.js.map": "/static/js/main.96274e81.js.map"
+    "main.8e4a4f19.css.map": "/static/css/main.8e4a4f19.css.map",
+    "main.86d11d92.js.map": "/static/js/main.86d11d92.js.map"
   },
   "entrypoints": [
-    "static/css/main.b84cd992.css",
-    "static/js/main.96274e81.js"
+    "static/css/main.8e4a4f19.css",
+    "static/js/main.86d11d92.js"
   ]
 }

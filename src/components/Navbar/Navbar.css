@@ -24,7 +24,10 @@
   justify-content: flex-end;
   font-weight: 400;
 }
-
+.link {
+  text-decoration: none;
+  color: black;
+}
 .n-list {
   flex: 10;
 }

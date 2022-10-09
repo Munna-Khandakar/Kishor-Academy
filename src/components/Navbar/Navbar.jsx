@@ -18,19 +18,29 @@ const navbar = () => {
         <div className="n-list">
           <ul style={{ listStyleType: "none" }}>
             <li>
-              <Link to="/">Home</Link>
+              <Link className="link" to="/">
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/courses">Courses</Link>
+              <Link className="link" to="/courses">
+                Courses
+              </Link>
             </li>
             <li>
-              <Link to="/workshop">Workshops</Link>
+              <Link className="link" to="/workshop">
+                Workshops
+              </Link>
             </li>
             <li>
-              <Link to="/portfolio">Portfolio</Link>
+              <Link className="link" to="/portfolio">
+                Portfolio
+              </Link>
             </li>
             <li>
-              <Link to="/testimonial">Testimonial</Link>
+              <Link className="link" to="/testimonial">
+                Testimonial
+              </Link>
             </li>
           </ul>
         </div>
