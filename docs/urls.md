@@ -14,3 +14,7 @@ www.flaticon.com
 get all the tags by slug - beginner,intermediate,
 
 get all the posts by tag
+
+level1-slugName
+level2-slugName
+level3-slugName
