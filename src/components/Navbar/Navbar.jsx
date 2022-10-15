@@ -44,9 +44,13 @@ const navbar = () => {
             </li>
           </ul>
         </div>
-        <Link to="#">
+
+        <a target="_blank" href="https://blog.kishor.academy/">
           <button className="button n-button">Blog</button>
-        </Link>
+        </a>
+        {/* <Link to="/blog">
+          <button className="button n-button">Blog</button>
+        </Link> */}
       </div>
     </div>
   );
